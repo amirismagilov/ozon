@@ -22,4 +22,5 @@ add_books(books, war_and_piece)
 add_books(books, anna_karenina)
 
 
-print(search_books_tags(books, 'Толстой'))
+print(search_books_tags(books, 'Тотой'))
+print(search_books(books, '#любовь'))

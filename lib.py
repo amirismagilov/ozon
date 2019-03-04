@@ -7,7 +7,6 @@ def create_book(title, author, price, availability, tags):
         'tags': tags
     }
 
-
 def add_books(container, book):
     container.append(book)
 
@@ -28,13 +27,19 @@ def search_books(container, search): #search - строка поиска
         if searched_lowercased in book['author'].lower():
             result.append(book)
             continue
+
+        tags_list = book['tags'].replace(' ', '').lower().split(',')
+        if searched_lowercased[1:] in tags_list:
+            result.append(book)
+            continue
     return result
 
-def search_books_tags(container, search):
-    searched_lowercased = search.strip().lower()
-    result = []
-    for book in container:
-        tags_list = book['tags'].replace(' ', '').lower().split(',')
-        if searched_lowercased in tags_list:
-            result.append(book)
-    return result
+# def search_books_tags(container, search):
+#     searched_lowercased = search.strip().lower()
+#     result = []
+#     for book in container:
+#         tags_list = book['tags'].replace(' ', '').lower().split(',')
+#         if searched_lowercased in tags_list:
+#             result.append(book)
+#     return result
+

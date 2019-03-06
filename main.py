@@ -1,4 +1,4 @@
-from lib import create_book, add_books, search_books, list_books, search_books_tags
+from lib import create_book, add_books, search_books, list_books
 
 books = []
 
@@ -7,7 +7,7 @@ war_and_piece = create_book(
     'Толстой',
     1000,
     True,
-    'война, любовь, толстой',
+    '#война #любовь #толстой',
 )
 
 anna_karenina = create_book(
@@ -15,12 +15,12 @@ anna_karenina = create_book(
     'Толстой',
     500,
     False,
-    'поезд, любовь, толстой',
+    '#поезд #любовь #толстой',
 )
 
 add_books(books, war_and_piece)
 add_books(books, anna_karenina)
 
 
-print(search_books_tags(books, 'Тотой'))
+
 print(search_books(books, '#любовь'))

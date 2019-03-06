@@ -19,7 +19,7 @@ def list_books(container, page, page_size):
 def search_books(container, search): #search - строка поиска
     searched_lowercased = search.strip().lower()
     result = []
-    for book in не :
+    for book in container :
         if searched_lowercased in book['title'].lower():
             result.append(book)
             continue
@@ -28,7 +28,7 @@ def search_books(container, search): #search - строка поиска
             result.append(book)
             continue
 
-        tags_list = book['tags'].replace(' ', '').lower().split(',')
+        tags_list = book['tags'].replace(' ', '').lower().split('#')
         if searched_lowercased[1:] in tags_list:
             result.append(book)
             continue
